@@ -134,3 +134,6 @@ System.debug(s1);
 
 Integer int1 = Dec.valueOf('123');
 System.debug(int1);
+
+
+FreshdeskUtil.viewAllContacts();
