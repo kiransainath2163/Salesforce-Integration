@@ -1,0 +1,95 @@
+<!--
+  @description       : 
+  @author            : kiransainath@apisero.com
+  @group             : 
+  @last modified on  : 11-04-2021
+  @last modified by  : kiransainath@apisero.com
+-->
+<template>
+    <div>
+        <lightning-card>
+            authorizationCode:
+            <lightning-formatted-text
+                value={metadataValues.AuthorizationCode__c}
+            ></lightning-formatted-text
+            ><br />
+            <template if:true={isShow.showAuthorizationButton}>
+                <lightning-button
+                    label="Please click to authorize Salesforce"
+                    onclick={handleAuthorization}
+                ></lightning-button
+                ><br />
+            </template>
+            <!--  -->
+            <template if:true={isShow.checkAuthorization}>
+                <lightning-formatted-text
+                    value="Checking Authorization Code💫"
+                ></lightning-formatted-text
+                ><br />
+            </template>
+
+            <!--  -->
+            <template if:true={isShow.fetchAuthorization}>
+                <lightning-formatted-text
+                    value="Fetching Authorization Code🕐"
+                ></lightning-formatted-text
+                ><br />
+            </template>
+
+            <!--  -->
+            <template if:true={isShow.checkAccessToken}>
+                <lightning-formatted-text
+                    value="Checking Access Token💫"
+                ></lightning-formatted-text
+                ><br />
+            </template>
+
+            <!--  -->
+            <template if:true={isShow.checkAccessTokenValidity}>
+                <lightning-formatted-text
+                    value="Checking Access Token Validity🔁"
+                ></lightning-formatted-text
+                ><br />
+            </template>
+
+            <!--  -->
+            <template if:true={isShow.fetchAccessToken}>
+                <lightning-formatted-text
+                    value="Fetching Access Token💨"
+                ></lightning-formatted-text
+                ><br />
+            </template>
+
+            <!--  -->
+            <template if:true={isShow.fetchRefreshedAccessToken}>
+                <lightning-formatted-text
+                    value="Fetching Refreshed Access Token♻"
+                ></lightning-formatted-text
+                ><br />
+            </template>
+
+            <!--  -->
+            <template if:true={isShow.accessTokenSuccess}>
+                <lightning-formatted-text
+                    value="Fetched Access Token successfully✔"
+                ></lightning-formatted-text
+                ><br />
+            </template>
+
+            <!--  -->
+            <template if:true={isShow.refreshedAccessTokenSuccess}>
+                <lightning-formatted-text
+                    value="Fetched Refreshed Access Token successfully✔"
+                ></lightning-formatted-text
+                ><br />
+            </template>
+
+            <template if:true={isShow.accessTokenUptoDate}>
+                <lightning-formatted-text
+                    value="Access Token is UptoDate✔"
+                ></lightning-formatted-text
+                ><br />
+            </template>
+        </lightning-card>
+    </div>
+</template>

@@ -1,0 +1,128 @@
+<!--
+  @description       : 
+  @author            : kiransainath@apisero.com
+  @group             : 
+  @last modified on  : 10-26-2021
+  @last modified by  : kiransainath@apisero.com
+-->
+<template>
+    <lightning-card title="Create a Freshdesk Ticket">
+        <template if:true={freshDeskWrapper}>
+            <div
+                class="
+                    slds-grid slds-gutters slds-wrap
+                    slds-var-m-horizontal_small
+                "
+            >
+                <!-- Email -->
+                <div
+                    class="
+                        slds-col
+                        slds-size_1-of-1
+                        slds-medium-size_1-of-2
+                        slds-large-size_1-of-2
+                    "
+                >
+                    <lightning-input
+                        type="email"
+                        label="Email Address"
+                        value={freshDeskWrapper.Email}
+                        name="Email"
+                        onchange={handleChange}
+                        class="validate"
+                        required
+                    ></lightning-input>
+                </div>
+
+                <!-- Subject -->
+                <div
+                    class="
+                        slds-col
+                        slds-size_1-of-1
+                        slds-medium-size_1-of-2
+                        slds-large-size_1-of-2
+                    "
+                >
+                    <lightning-input
+                        type="text"
+                        label="Subject"
+                        value={freshDeskWrapper.Subject}
+                        name="Subject"
+                        onchange={handleChange}
+                        class="validate"
+                        required
+                    ></lightning-input>
+                </div>
+
+                <!-- Priority -->
+                <div
+                    class="
+                        slds-col
+                        slds-size_1-of-1
+                        slds-medium-size_1-of-2
+                        slds-large-size_1-of-2
+                    "
+                >
+                    <lightning-input
+                        type="number"
+                        label="Priority"
+                        value={freshDeskWrapper.Priority}
+                        name="Priority"
+                        onchange={handleChange}
+                        class="validate"
+                        required
+                    ></lightning-input>
+                </div>
+
+                <!-- Status -->
+                <div
+                    class="
+                        slds-col
+                        slds-size_1-of-1
+                        slds-medium-size_1-of-2
+                        slds-large-size_1-of-2
+                    "
+                >
+                    <lightning-input
+                        type="number"
+                        label="Status"
+                        value={freshDeskWrapper.Status}
+                        name="Status"
+                        onchange={handleChange}
+                        class="validate"
+                        required
+                    ></lightning-input>
+                </div>
+
+                <!-- Description -->
+                <div
+                    class="
+                        slds-col
+                        slds-size_1-of-1
+                        slds-medium-size_1-of-1
+                        slds-large-size_1-of-1
+                    "
+                >
+                    <lightning-textarea
+                        label="Description"
+                        value={freshDeskWrapper.Description}
+                        name="Description"
+                        onchange={handleChange}
+                        class="validate"
+                        required
+                    ></lightning-textarea>
+                </div>
+
+                <!-- Create Button -->
+                <div class="slds-var-p-around_medium">
+                    <lightning-button
+                        label="Create"
+                        class="slds-align_absolute-center"
+                        title="Create"
+                        onclick={createTicket}
+                    ></lightning-button>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

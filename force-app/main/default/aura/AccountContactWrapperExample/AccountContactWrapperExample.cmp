@@ -1,0 +1,70 @@
+<!--
+  @description       : 
+  @author            : kiransainath@apisero.com
+  @group             : 
+  @last modified on  : 10-18-2021
+  @last modified by  : kiransainath@apisero.com
+-->
+<aura:component
+    controller="AccountContactController"
+    implements="force:hasRecordId, flexipage:availableForRecordHome"
+>
+    <aura:handler name="init" value="{!this}" action="{!c.initData}" />
+    <!-- Attributes declaration-->
+    <aura:attribute name="accountContactWrapper" type="object" />
+    <aura:attribute name="recordId" type="Id" />
+
+    <div class="slds-p-around--large">
+        <h1 style="font-size: 25px">
+            {!v.accountContactWrapper.accRecord.Name}
+        </h1>
+        <br />
+        <p style="color: red">
+            Total Contacts = {!v.accountContactWrapper.contactCount}
+        </p>
+
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="First Name">
+                            First Name
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="First Name">
+                            Last Name
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Email">Email</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration
+                    items="{!v.accountContactWrapper.contactList }"
+                    var="con"
+                >
+                    <tr>
+                        <th scope="row">
+                            <div class="slds-truncate" title="{!con.FirstName}">
+                                {!con.FirstName}
+                            </div>
+                        </th>
+                        <th scope="row">
+                            <div class="slds-truncate" title="{!con.LastName}">
+                                {!con.LastName}
+                            </div>
+                        </th>
+                        <th scope="row">
+                            <div class="slds-truncate" title="{!con.Email}">
+                                {!con.Email}
+                            </div>
+                        </th>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+</aura:component>

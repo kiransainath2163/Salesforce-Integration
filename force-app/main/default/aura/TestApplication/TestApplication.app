@@ -1,0 +1,2 @@
+<aura:application>
+</aura:application>	
